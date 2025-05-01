@@ -1,7 +1,6 @@
 # 🛡️ Insurance Policy Management API
 
-Application Spring Boot pour la gestion de polices d'assurance, incluant la création, la lecture, la mise à jour, la pagination, le tri, la documentation Swagger, l'accès à la base H2, la conteneurisation Docker, ainsi que des tests automatisés avec des collections Postman et l'exécution via Newman.
----
+Application Spring Boot pour la gestion de polices d'assurance, incluant la création, la lecture, la mise à jour, la pagination, le tri, la documentation Swagger, l'accès à la base H2, et la conteneurisation Docker, ainsi que des tests automatisés avec des collections Postman et l'exécution via Newman.---
 
 ## 🚀 Fonctionnalités
 
