@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "8740f7de-df84-4a41-ab66-4b46ff7cf5b7",
+		"name": "Test updating policies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44597531",
+		"_collection_link": "https://hicham-3207061.postman.co/workspace/Hicham's-Workspace~db2adc33-9dce-49b2-8ccd-8e949e44d94f/collection/44597531-8740f7de-df84-4a41-ab66-4b46ff7cf5b7?action=share&source=collection_link&creator=44597531"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/policies/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Assurance Auto Gold\",\n  \"status\": \"INACTIVE\",\n  \"startDate\": \"2025-02-01\",\n  \"endDate\": \"2026-02-01\"\n}\n\n\n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/policies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"policies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
