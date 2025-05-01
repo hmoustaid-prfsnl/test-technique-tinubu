@@ -1,4 +1,4 @@
-package com.tinubu.insurance_api;
+package com.tinubu.insurance;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

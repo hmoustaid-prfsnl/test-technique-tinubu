@@ -1,4 +1,4 @@
-package com.tinubu.insurance_api;
+package com.tinubu.insurance;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
