@@ -1,7 +1,6 @@
 # 🛡️ Insurance Policy Management API
 
-Application Spring Boot pour la gestion de polices d'assurance, incluant la création, la lecture, la mise à jour, la pagination, le tri, la documentation Swagger, l'accès à la base H2, et la conteneurisation Docker.
-
+Application Spring Boot pour la gestion de polices d'assurance, incluant la création, la lecture, la mise à jour, la pagination, le tri, la documentation Swagger, l'accès à la base H2, la conteneurisation Docker, ainsi que des tests automatisés avec des collections Postman et l'exécution via Newman.
 ---
 
 ## 🚀 Fonctionnalités
@@ -11,6 +10,7 @@ Application Spring Boot pour la gestion de polices d'assurance, incluant la cré
 - Swagger UI pour la documentation interactive
 - Console H2 activée (avec `web-allow-others` pour Docker)
 - Dockerfile multi-stage (build Maven + exécution JRE)
+- Tests API automatisés avec collections Postman et exécution en ligne de commande via Newman
 
 ---
 
@@ -23,6 +23,7 @@ Application Spring Boot pour la gestion de polices d'assurance, incluant la cré
 - H2 Database (mode mémoire)
 - Maven 3.9+
 - Docker
+- Newman
 
 ---
 
@@ -33,6 +34,7 @@ Application Spring Boot pour la gestion de polices d'assurance, incluant la cré
 - JDK 21
 - Maven 3.9+
 - Docker (optionnel pour conteneuriser)
+- Newman (optionnel pour les tests)
 
 ### Compilation & exécution
 
@@ -47,7 +49,7 @@ mvn spring-boot:run
 - Console H2 : [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
   - JDBC URL : `jdbc:h2:mem:insurance_db`
   - User : `sa`
-  - Password : 
+  - Password :
 
 ---
 
@@ -55,7 +57,7 @@ mvn spring-boot:run
 
 ```
 src/main/java/com/tinubu/insurance
-├── config/       # Configuration (Swagger, etc.)
+├── config/       # Configuration (Auditing)
 ├── controller/   # Contrôleurs REST
 ├── dto/          # DTOs (Create, Update, Response)
 ├── exception/    # Gestion des erreurs personnalisées
@@ -93,5 +95,48 @@ Swagger UI est automatiquement accessible :
 
 - [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 - OpenAPI JSON : [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+
+---
+
+## 🧪 Tests Postman & Newman
+
+### 📦 Installer Newman (outil CLI de Postman)
+
+Assurez-vous d’avoir [Node.js](https://nodejs.org) installé, puis :
+
+```bash
+npm install -g newman
+```
+
+Vérification :
+
+```bash
+newman -v
+```
+
+---
+
+### 📁 Structure des collections Postman
+
+Les fichiers se trouvent dans le dossier `src/test/postman/` :
+
+```
+postman/
+├── create-collection.json               # Création de policies
+├── fetch-collection.json                # Lecture par ID
+├── pagination-sorting-collection.json  # Tests de pagination et tri
+├── populate-collection.json             # Peuplement initial
+├── update-collection.json               # Mise à jour de policies
+```
+
+---
+
+### ▶️ Lancer un test avec Newman
+
+```bash
+newman run src/test/postman/create-collection.json
+```
+
+👉 Répéter pour chaque fichier selon les cas de test (`fetch`, `update`, etc.)
 
 ---
